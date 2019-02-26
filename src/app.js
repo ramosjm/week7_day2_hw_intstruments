@@ -5,7 +5,6 @@ const ResultView = require('./views/instrument_result_view.js');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('JavaScript Loaded');
   const dropdownElement = document.querySelector('#instrument-families');
   const instrumentDropdown = new InstrumentSelectView(dropdownElement);
   instrumentDropdown.bindEvents();

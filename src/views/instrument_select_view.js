@@ -7,14 +7,11 @@ const InstrumentSelectView = function(dropdownElement){
 InstrumentSelectView.prototype.bindEvents = function(){
   PubSub.subscribe('InstrumentFamilies:all-instruments-ready',(evt) =>{
     const allInstruments = event.detail;
-    console.log('all instruments:');
-    console.log(allInstruments);
     this.addOptions(allInstruments);
   });
 
   this.dropdownElement.addEventListener('change',(evt)=>{
     const dropDownSelectedIndex = evt.target.value;
-    console.log(dropDownSelectedIndex);
     PubSub.publish('InstrutmentSelectView:change',dropDownSelectedIndex);
   });
 };

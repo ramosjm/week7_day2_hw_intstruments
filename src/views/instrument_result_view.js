@@ -8,7 +8,6 @@ const ResultView = function(container){
 ResultView.prototype.bindEvents = function(){
   PubSub.subscribe('InstrumentFamilies:instrument-info-ready',(evt)=>{
     const instrumentFamilyInfo = evt.detail;
-    console.log(instrumentFamilyInfo);
     this.display(instrumentFamilyInfo);
   });
 };
@@ -26,8 +25,6 @@ ResultView.prototype.display = function(instrumentFamilyInfo){
   infoDivContainer.appendChild(instrumentHeader);
   this.container.append(infoDivContainer);
   const instrumentList = this.getInstruments(instrumentFamilyInfo.instruments);
-  console.log('result view instrument:');
-  console.log(instrumentFamilyInfo.instruments);
 };
 
 ResultView.prototype.getInstruments = function(instruments){
