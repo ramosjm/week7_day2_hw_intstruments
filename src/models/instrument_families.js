@@ -16,9 +16,9 @@ InstrumentFamilies.prototype.bindEvents = function(){
 };
 
 InstrumentFamilies.prototype.publishSingleInstrument = function(dropDownSelectedIndex){
-  const selectedInstrument = this.data[dropDownSelectedIndex].description;
-  console.log(selectedInstrument);
-  PubSub.publish('InstrumentFamilies:instrument-info-ready',selectedInstrument)
+  const selectedInstrumentInfo = this.data[dropDownSelectedIndex];
+  console.log(selectedInstrumentInfo);
+  PubSub.publish('InstrumentFamilies:instrument-info-ready',selectedInstrumentInfo)
 };
 
 module.exports = InstrumentFamilies;
