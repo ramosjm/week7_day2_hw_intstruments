@@ -21,7 +21,9 @@ ResultView.prototype.display = function(instrumentFamilyInfo){
   const infoParagraph = document.createElement('p');
   infoParagraph.textContent = instrumentFamilyInfo.description;
   infoDivContainer.appendChild(infoParagraph);
-  // this.container.innerHTML = '';
+  const instrumentHeader = document.createElement('h3');
+  instrumentHeader.textContent = 'Instruments Include:'
+  infoDivContainer.appendChild(instrumentHeader);
   this.container.append(infoDivContainer);
   const instrumentList = this.getInstruments(instrumentFamilyInfo.instruments);
   console.log('result view instrument:');
