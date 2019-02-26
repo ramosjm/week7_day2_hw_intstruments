@@ -16,8 +16,10 @@ ResultView.prototype.bindEvents = function(){
 ResultView.prototype.display = function(description){
   const infoParagraph = document.createElement('p');
   infoParagraph.textContent = description;
-  this.container.innerHTML = '';
-  this.container.appendChild(infoParagraph);
+  const infoDivContainer = document.createElement('div');
+  infoDivContainer.appendChild(infoParagraph);
+  // this.container.innerHTML = '';
+  this.container.append(infoDivContainer);
   console.log('result view instrument:');
   console.log(description);
 };
