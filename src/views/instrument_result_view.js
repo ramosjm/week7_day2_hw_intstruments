@@ -23,7 +23,8 @@ ResultView.prototype.display = function(instrumentFamilyInfo){
   const instrumentHeader = document.createElement('h3');
   instrumentHeader.textContent = 'Instruments Include:'
   infoDivContainer.appendChild(instrumentHeader);
-  this.container.append(infoDivContainer);
+  this.container.innerHTML = '';
+  this.container.appendChild(infoDivContainer);
   const instrumentList = this.getInstruments(instrumentFamilyInfo.instruments);
 };
 
